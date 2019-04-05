@@ -3,8 +3,6 @@ import P5Wrapper from 'react-p5-wrapper';
 
 import sketch from './game/gol.js';
 
-import Slider from './Util/Slider';
-
 import './Body.css';
 
 export default class Body extends Component
