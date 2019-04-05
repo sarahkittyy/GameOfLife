@@ -1,0 +1,15 @@
+.body {
+	text-align: center;
+	padding: 20px;
+}
+
+.body .sketch {
+	border: 5px outset #aaa;
+	width: 1000px;
+	margin: auto;
+	height: 500px;
+}
+
+.body .settings {
+	
+}
