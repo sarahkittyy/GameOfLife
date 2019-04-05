@@ -28,13 +28,13 @@ export default function sketch(p)
 	};
 	p.draw = () => {
 		p.background(255);
-		grid.updateMouse();
 		frameCount++;
 		if(running && frameCount >= (10 / speed))
 		{
 			frameCount = 0;
 			grid.update();
 		}
+		grid.updateMouse();
 		grid.draw();
 	};
 };
