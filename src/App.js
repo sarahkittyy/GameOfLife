@@ -11,7 +11,7 @@ export default class App extends Component
 	render()
 	{
 		return (
-			<h1>test</h1>	
+			<h1>Site not built yet</h1>	
 		);
 	}
 }
