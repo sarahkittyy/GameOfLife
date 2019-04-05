@@ -7,7 +7,10 @@ export default class Grid
 	{
 		this.p = p;
 		
-		this.ts = 50;
+		this.ts = 20;
+		
+		this.mousePressed = false;
+		this.tilesPressed = [];
 		
 		this.tiles = new Array(500 / this.ts);
 		for(let i = 0; i < this.tiles.length; ++i)
@@ -27,6 +30,37 @@ export default class Grid
 			{
 				this.newGrid[i][j] = false;
 			}
+		}
+	}
+	
+	updateMouse()
+	{
+		let isPairInPressed = (tx, ty) => {
+			for(let arr of this.tilesPressed)
+			{
+				if(arr[0] === tx && arr[1] === ty)
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+		if(this.mousePressed)
+		{
+			let x = this.p.mouseX;
+			let y = this.p.mouseY;
+			let tx = Math.floor(x / this.ts);
+			let ty = Math.floor(y / this.ts);
+			
+			if(!isPairInPressed(tx, ty))
+			{
+				this.tilesPressed.push([tx, ty]);
+				this.tiles[ty][tx].set(!this.tiles[ty][tx].isOn());
+			}
+		}
+		else
+		{
+			this.tilesPressed = [];
 		}
 	}
 	
@@ -92,6 +126,17 @@ export default class Grid
 	off(x, y)
 	{
 		this.tiles[y][x].off();
+	}
+	
+	clear()
+	{
+		for(let y = 0; y < this.tiles.length; ++y)
+		{
+			for(let x = 0; x < this.tiles[0].length; ++x)
+			{
+				this.tiles[y][x].off();
+			}
+		}
 	}
 	
 	draw()
