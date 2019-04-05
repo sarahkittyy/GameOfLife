@@ -1,18 +1,24 @@
 .body {
 	text-align: center;
-	padding: 20px;
+	padding: 4px;
+	overflow: scroll;
+	width: 100% - 20px;
+	height: 100%;
 }
 
 .body .sketch {
+	display: inline-block;
 	border: 5px outset #aaa;
 	width: 1000px;
-	float: left;
 	height: 500px;
+	vertical-align: top;
 }
 
 .body .settings {
+	display: inline-block;
 	width: 100% - 1000px;
-	height: 500px;
+	height: 100%;
+	vertical-align: top;
 	background-color: #222;
 	border: 5px outset #aaa;
 }
