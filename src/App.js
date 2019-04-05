@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 
+import Body from './Body';
+
 export default class App extends Component 
 {
 	constructor(props)
@@ -11,7 +13,10 @@ export default class App extends Component
 	render()
 	{
 		return (
-			<h1>Site not built yet</h1>	
+			<div className="main">
+				<h1 id="title">Game Of Life!</h1>
+				<Body />
+			</div>
 		);
 	}
 }
