@@ -10,9 +10,6 @@ export default function sketch(p)
 	p.setup = () => {
 		p.createCanvas(1000, 500);
 		p.frameRate(60);
-		
-		for(let i = 0; i < 10; ++i){
-			grid.on(i+10, 10);}
 	};
 	p.myCustomRedrawAccordingToNewPropsHandler = (props) => {
 		running = (props.running === "true");
