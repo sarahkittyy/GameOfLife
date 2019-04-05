@@ -52,10 +52,16 @@ export default class Grid
 			let tx = Math.floor(x / this.ts);
 			let ty = Math.floor(y / this.ts);
 			
+			if(tx < 0 || tx >= this.tiles[0].length ||
+				ty < 0 || ty >= this.tiles.length)
+			{
+				return null;
+			}
+			
 			if(!isPairInPressed(tx, ty))
 			{
 				this.tilesPressed.push([tx, ty]);
-				this.tiles[ty][tx].set(!this.tiles[ty][tx].isOn());
+				this.tiles[ty][tx].set(!(this.tiles[ty][tx].isOn()));
 			}
 		}
 		else
